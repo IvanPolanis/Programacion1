@@ -1,5 +1,8 @@
 
 
+
+
+
 {Simular el funcionamiento de un conjunto de caracteres de la ‘a’ a la ‘z’ utilizando un arreglo. Defina
 un tipo de datos adecuado e implemente módulos que realicen las operaciones de unión y diferencia
 de dos conjuntos y una función que permite determinar si una letra pertenece al conjunto.
@@ -66,10 +69,16 @@ Begin
       j := 1;
       While ((Not isInArray) And (j<=dimF)) Do
         Begin
-          If (v2[j]=v1[i])Then
+          If (v2[j]=v1[i]) Then
             Begin
               isInArray := true;
             End;
+          j := j+1;
+        End;
+      j := 1;
+      While (Not isInArray) And (j<=k) Do
+        Begin
+          If (v1[i]=v[j]) Then isInArray := true;
           j := j+1;
         End;
       If (Not isInArray) Then
@@ -77,6 +86,7 @@ Begin
           v[k] := v1[i];
           k := k+1;
         End;
+
     End;
 End;
 
@@ -85,11 +95,14 @@ Function estaEnArray(Var v: vector; c:char): boolean;
 Var exito: boolean;
   i: integer;
 Begin
+  i := 0;
   exito := false;
-  While (Not exito) And (j<=dimF) Do
+  While (Not exito) And (i<=dimF) Do
     Begin
       If (v[i]=c) Then exito := true;
+      i := i+1;
     End;
+
   estaEnArray := exito;
 End;
 
@@ -101,12 +114,14 @@ Begin
     write(v[i])
 End;
 
-Var v,v1,v2: vector;
+Var v1: vector = ('a','b','a','b','a','b','a','b','a','b','a','b','a','b','a','b','a','b','a','b','a','b','a','b','a','b');
+  v2: vector = ('z','s','z','s','z','s','z','s','z','s','z','s','z','s','z','s','z','s','z','s','z','s','z','s','z','s');
+  v: vector;
   k: integer;
 Begin
 
-  cargarVector(v1);
-  cargarVector(v2);
+
+
   diferenciaArray(v,v1,v2,k);
   imprimir(v);
 
