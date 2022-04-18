@@ -1,8 +1,3 @@
-
-
-
-
-
 {Se dispone de un módulo que carga un vector con a lo sumo 2000 nombres de personas, ordenadas
 de forma ascendente. Realice un programa que implemente módulos que reciban dicho vector y
 permitan:
