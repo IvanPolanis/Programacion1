@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 {a) Implemente un módulo que lea una secuencia de caracteres que representan una palabra
 (termina con blanco o asterisco), y retorne la cantidad de consonantes y vocales de dicha palabra.
 b) Utilizando el módulo implementado en a) realice un programa que procese una secuencia de

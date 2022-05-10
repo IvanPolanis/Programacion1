@@ -1,6 +1,4 @@
 
-
-
 {Realizar un módulo que reciba un vector A y dos valores I, J. El módulo debe devolver el vector A del cual se suprimen las componentes que se encuentran entre las posiciones I y J inclusive lascomponentes de dichas posiciones)}
 
 Program p7ej2;
@@ -16,7 +14,7 @@ Begin
   i := 1;
   dimL := 0;
   ReadLn(n);
-  While (n<>0) And (i<dimF) Do
+  While (n<>0) And (i<=dimF) Do
     Begin
       v[i] := n;
       readln(n);
@@ -27,15 +25,17 @@ End;
 
 Procedure eliminar(Var v:vector; Var dimL:integer; a,b:integer);
 
-Var i,c: Integer;
+Var i,c,aux: Integer;
 Begin
   c := b+1;
-  For i:=a To b Do
+  aux := dimL-(b-a+1);
+  For i:=a To aux Do
     Begin
       v[i] := v[c];
       c := c+1;
-      dimL := dimL-1;
     End;
+  dimL := dimL-(b-a+1);
+
 End;
 
 Procedure imprimir(v:vector; dimL:integer);

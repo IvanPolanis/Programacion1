@@ -15,6 +15,7 @@ Begin
     v[i] := v[i-1];
   v[pos]:=n;
 End;
+
 Procedure buscarNumero(Var v:vector;n:integer);
 
 Var i: integer;
